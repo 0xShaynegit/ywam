@@ -585,11 +585,19 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 }
 
 /* ---------- 4. Mirrors (day) ---------- */
+/* Exactly four cards, so the columns are pinned rather than auto-fit: an
+   auto-fit track count leaves an empty column on wide screens, which reads
+   as a missing fifth card. Full section width, no cap. */
 .mirror-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.4rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+}
+@media (max-width: 1000px) {
+  .mirror-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .mirror-grid { grid-template-columns: 1fr; }
 }
 
 .mirror-card {
@@ -659,6 +667,10 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 }
 
 .program-card__image {
+  /* The reset caps images at max-width:100%, which clamps this back to the
+     content box and leaves the card's right padding showing beside every
+     photo. The bleed only works with the cap lifted. */
+  max-width: none;
   width: calc(100% + 3.6rem);
   margin: -2.1rem -1.8rem 1.4rem;
   height: 180px;
