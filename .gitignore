@@ -13,6 +13,9 @@ out/
 # Cloudflare
 .wrangler/
 
+# Local scratch
+.ua/
+
 # OS files
 .DS_Store
 Thumbs.db

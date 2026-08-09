@@ -167,6 +167,10 @@ h1, h2, h3 {
 
 h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
+/* Page-title h1 in a standard section head. The hero and 404 h1s carry
+   their own sizing, so this must not be a bare element selector. */
+.section-head h1 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
+
 .eyebrow {
   font-size: 0.72rem;
   font-weight: 640;
@@ -869,12 +873,13 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
 /* ---------- Subpage: legal page body copy ---------- */
 .legal-body { max-width: 68ch; }
-.legal-body h3 {
+.legal-body h2 {
   font-size: 1.35rem;
+  max-width: none;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
-.legal-body h3:first-child { margin-top: 0; }
+.legal-body h2:first-child { margin-top: 0; }
 .legal-body p, .legal-body li {
   font-size: 1rem;
   color: var(--ink-soft);
@@ -1072,7 +1077,7 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
   border-radius: 6px;
   background: var(--bg-raise);
 }
-.role-card h4 {
+.role-card h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   color: var(--accent-ink);
