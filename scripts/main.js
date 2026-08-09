@@ -386,4 +386,129 @@
       window.location.href = "mailto:" + el.dataset.user + "@" + el.dataset.domain;
     });
   });
+
+  /* ---------- 8. Outreach cost calculator (teams.html only) ---------- */
+  // Recalculates live on every input. USD and baht are totalled
+  // separately and never converted: the exchange rate published on the
+  // source page is years old and would age the page badly.
+  var calc = document.getElementById("teamCalc");
+  if (calc) {
+    var people = document.getElementById("calcPeople");
+    var days = document.getElementById("calcDays");
+    var region = document.getElementById("calcRegion");
+    var translator = document.getElementById("calcTranslator");
+    var outRate = document.getElementById("calcRate");
+    var outUsd = document.getElementById("calcUsd");
+    var outTrans = document.getElementById("calcTrans");
+    var transLine = document.getElementById("calcTransLine");
+    var outBaht = document.getElementById("calcBaht");
+
+    var REGISTRATION = 2500;
+    var TRANSLATOR_DAY = 1000;
+
+    var clamp = function (input) {
+      var n = parseInt(input.value, 10);
+      if (isNaN(n) || n < Number(input.min)) n = Number(input.min);
+      if (n > Number(input.max)) n = Number(input.max);
+      return n;
+    };
+
+    var group = function (n) { return n.toLocaleString("en-US"); };
+
+    var render = function () {
+      var n = clamp(people);
+      var d = clamp(days);
+      var rate = Number(region.value);
+      var baht = REGISTRATION;
+
+      if (translator.checked) {
+        var trans = TRANSLATOR_DAY * d;
+        baht += trans;
+        outTrans.textContent = group(trans) + " baht";
+        transLine.hidden = false;
+      } else {
+        transLine.hidden = true;
+      }
+
+      outRate.textContent = "$" + rate + " per person per day";
+      outUsd.textContent = "$" + group(n * d * rate) + " USD";
+      outBaht.textContent = group(baht) + " baht";
+    };
+
+    ["input", "change"].forEach(function (evt) {
+      calc.addEventListener(evt, render);
+    });
+    render();
+  }
+
+  /* ---------- 9. Nav dropdowns ---------- */
+  // mouseenter/mouseleave with a close delay rather than CSS :hover: a
+  // pointer travelling diagonally from the toggle to the far corner of the
+  // panel leaves the toggle's box on the way, and :hover would close the
+  // menu underneath it. The delay covers that trip. Click and keyboard
+  // focus open it too, so this works without a pointer at all.
+  var drops = document.querySelectorAll("[data-nav-drop]");
+  if (drops.length) {
+    var CLOSE_DELAY = 220;
+    var openDrop = null;
+    var closeTimer = null;
+
+    var setOpen = function (drop, open) {
+      var toggle = drop.querySelector(".nav-drop-toggle");
+      var menu = drop.querySelector(".nav-drop-menu");
+      if (!toggle || !menu) return;
+      menu.hidden = !open;
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      openDrop = open ? drop : (openDrop === drop ? null : openDrop);
+    };
+
+    var closeAll = function () {
+      Array.prototype.forEach.call(drops, function (d) { setOpen(d, false); });
+      openDrop = null;
+    };
+
+    Array.prototype.forEach.call(drops, function (drop) {
+      var toggle = drop.querySelector(".nav-drop-toggle");
+      if (!toggle) return;
+
+      drop.addEventListener("mouseenter", function () {
+        window.clearTimeout(closeTimer);
+        if (openDrop && openDrop !== drop) setOpen(openDrop, false);
+        setOpen(drop, true);
+      });
+
+      drop.addEventListener("mouseleave", function () {
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(function () { setOpen(drop, false); }, CLOSE_DELAY);
+      });
+
+      toggle.addEventListener("click", function () {
+        var isOpen = toggle.getAttribute("aria-expanded") === "true";
+        closeAll();
+        if (!isOpen) setOpen(drop, true);
+      });
+
+      drop.addEventListener("focusin", function () {
+        window.clearTimeout(closeTimer);
+        if (openDrop && openDrop !== drop) setOpen(openDrop, false);
+        setOpen(drop, true);
+      });
+
+      drop.addEventListener("focusout", function (e) {
+        if (drop.contains(e.relatedTarget)) return;
+        setOpen(drop, false);
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || !openDrop) return;
+      var toggle = openDrop.querySelector(".nav-drop-toggle");
+      closeAll();
+      if (toggle) toggle.focus();
+    });
+
+    document.addEventListener("click", function (e) {
+      if (openDrop && !openDrop.contains(e.target)) closeAll();
+    });
+  }
 })();

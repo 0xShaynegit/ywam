@@ -9,7 +9,7 @@ import os
 import re
 import sys
 
-SKIP = {"pvtest.html"}
+SKIP = set()
 
 # Pages that intentionally inherit the CSS default --subpage-accent (indigo).
 # Utility pages plus the already-built project-video page.

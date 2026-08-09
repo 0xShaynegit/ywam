@@ -110,27 +110,67 @@
     YWAM <em>Chiang Mai</em>
   </a>
   <nav class="nav-links" aria-label="Primary">
-    <a href="#programs">Programs</a>
-    <a href="#mission">About</a>
-    <a href="#life">Life Here</a>
+    <div class="nav-drop" data-nav-drop>
+      <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-controls="navSchools">Schools</button>
+      <div class="nav-drop-menu" id="navSchools" hidden>
+        <a href="dts.html">DTS</a>
+        <a href="sbs.html">SBS</a>
+        <a href="project-video.html">Project Video</a>
+        <a href="create-international.html">Create International</a>
+        <a href="belt.html">BELT</a>
+      </div>
+    </div>
+    <div class="nav-drop" data-nav-drop>
+      <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-controls="navMinistries">Ministries</button>
+      <div class="nav-drop-menu" id="navMinistries" hidden>
+        <a href="home-of-joy.html">Home of Joy</a>
+        <a href="baan-dem-rak.html">Baan Dem Rak</a>
+        <a href="teach-our-kids.html">Teach Our Kids</a>
+        <a href="shan.html">Shan Outreach</a>
+        <a href="spiritual-direction.html">Spiritual Direction</a>
+        <a href="business-as-mission.html">Business as Mission</a>
+      </div>
+    </div>
+    <div class="nav-drop" data-nav-drop>
+      <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-controls="navAbout">About</button>
+      <div class="nav-drop-menu" id="navAbout" hidden>
+        <a href="#mission">About Us</a>
+        <a href="teams.html">Outreach Teams</a>
+        <a href="#life">Life Here</a>
+      </div>
+    </div>
     <a href="join-staff.html">Join Staff</a>
     <a href="donate.html">Donate</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a class="nav-apply" href="#programs">Apply</a>
+  <a class="nav-apply" href="dts.html">Apply</a>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span>
   </button>
 </header>
 
 <div class="mobile-menu" id="mobileMenu" hidden>
-  <a href="#programs">Programs</a>
-  <a href="#mission">About</a>
+  <p class="mobile-menu-head">Schools</p>
+  <a href="dts.html">DTS</a>
+  <a href="sbs.html">SBS</a>
+  <a href="project-video.html">Project Video</a>
+  <a href="create-international.html">Create International</a>
+  <a href="belt.html">BELT</a>
+  <p class="mobile-menu-head">Ministries</p>
+  <a href="home-of-joy.html">Home of Joy</a>
+  <a href="baan-dem-rak.html">Baan Dem Rak</a>
+  <a href="teach-our-kids.html">Teach Our Kids</a>
+  <a href="shan.html">Shan Outreach</a>
+  <a href="spiritual-direction.html">Spiritual Direction</a>
+  <a href="business-as-mission.html">Business as Mission</a>
+  <p class="mobile-menu-head">About</p>
+  <a href="#mission">About Us</a>
+  <a href="teams.html">Outreach Teams</a>
   <a href="#life">Life Here</a>
   <a href="join-staff.html">Join Staff</a>
   <a href="donate.html">Donate</a>
   <a href="#contact">Contact</a>
-  <a class="nav-apply" href="#programs">Apply</a>
+  <a class="nav-apply" href="dts.html">Apply</a>
 </div>
 
 <main id="main">
@@ -153,7 +193,7 @@
     </h1>
     <p class="hero-sub">A base for young adults, makers and storytellers in the mountains of northern Thailand. Come for six months. Leave different.</p>
     <div class="hero-ctas">
-      <a class="btn btn-solid" href="#programs">Explore programs</a>
+      <a class="btn btn-solid" href="#programs">Explore the schools</a>
       <a class="btn btn-ghost" href="#mission">What is YWAM?</a>
     </div>
   </div>
@@ -258,63 +298,59 @@
 -->
 <section class="programs" data-phase="day" id="programs">
   <div class="section-head reveal">
-    <p class="eyebrow">The programs</p>
-    <h2>Four doors. One direction.</h2>
-    <p class="lede">Every school lives at the base, runs in English, and ends with your feet somewhere new in Asia.</p>
+    <p class="eyebrow">The schools</p>
+    <h2>Five ways in. One direction.</h2>
+    <p class="lede">Every school lives at the base and ends with your feet somewhere new in Asia. Ask us for current dates and fees before you plan around them.</p>
   </div>
 
-  <div class="program-grid reveal">
+  <div class="program-grid program-bento reveal">
 
     <article class="program-card" data-accent="gold" style="--i:0">
-      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-dts-students-sharing-a-meal.webp" alt="DTS students sharing a meal together" width="600" height="400" loading="lazy">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-dts-students-sharing-a-meal.webp" alt="Four DTS students around a table of street food, smiling at the camera" width="600" height="400" loading="lazy">
       <p class="program-label">The front door</p>
       <h3>DTS</h3>
       <p class="program-tag">Discipleship Training School</p>
-      <p class="program-copy">Five months of learning who God is and who you are, then taking it on the road across Asia. Where everyone starts.</p>
+      <p class="program-copy">Five months of learning who God is and who you are, then taking it on the road across Asia. Almost everything else here expects you to have done it first.</p>
       <dl class="program-meta">
         <div><dt>Length</dt><dd>5 months</dd></div>
-        <div><dt>Next intake</dt><dd>September 2026</dd></div>
       </dl>
-      <a class="program-link" href="#" aria-label="Learn more about DTS">Learn more <span aria-hidden="true">&rarr;</span></a>
+      <a class="program-link" href="dts.html" aria-label="Learn more about the Discipleship Training School">Learn more <span aria-hidden="true">&rarr;</span></a>
     </article>
 
-    <article class="program-card" data-accent="rose" style="--i:1">
-      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-create-international-workshop.webp" alt="Create school workshop with artists and creatives" width="600" height="400" loading="lazy">
-      <p class="program-label">For the makers</p>
-      <h3>Create</h3>
-      <p class="program-tag">School of Arts &amp; Design</p>
-      <p class="program-copy">A school for artists, designers and musicians. Make honest work, in community, and learn what your craft is actually for.</p>
-      <dl class="program-meta">
-        <div><dt>Length</dt><dd>3 months</dd></div>
-        <div><dt>Next intake</dt><dd>January 2027</dd></div>
-      </dl>
-      <a class="program-link" href="#" aria-label="Learn more about Create">Learn more <span aria-hidden="true">&rarr;</span></a>
-    </article>
-
-    <article class="program-card" data-accent="indigo" style="--i:2">
-      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-project-video-asia-production-photo-1.webp" alt="Project Video documentary film shoot on location" width="600" height="400" loading="lazy">
+    <article class="program-card" data-accent="indigo" style="--i:1">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-project-video-asia-production-photo-1.webp" alt="Project Video crew filming on location" width="600" height="400" loading="lazy">
       <p class="program-label">For the storytellers</p>
       <h3>Project Video</h3>
-      <p class="program-tag">Documentary Film School</p>
-      <p class="program-copy">Documentary filmmaking in the field. Real people, real stakes, cameras in hand across Southeast Asia.</p>
-      <dl class="program-meta">
-        <div><dt>Length</dt><dd>3 months</dd></div>
-        <div><dt>Next intake</dt><dd>April 2027</dd></div>
-      </dl>
+      <p class="program-tag">Films for unreached Asia</p>
+      <p class="program-copy">Gospel films, dubbing and media training for peoples who have never heard any of it in their own language.</p>
       <a class="program-link" href="project-video.html" aria-label="Learn more about Project Video">Learn more <span aria-hidden="true">&rarr;</span></a>
     </article>
 
-    <article class="program-card" data-accent="teal" style="--i:3">
-      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-shan-outreach-center-photo-1.webp" alt="Frontier missions outreach at Shan Outreach Center" width="600" height="400" loading="lazy">
-      <p class="program-label">For the pioneers</p>
-      <h3>SOFM</h3>
-      <p class="program-tag">School of Frontier Missions</p>
-      <p class="program-copy">For the ones ready to go where the map runs out. Training for life and work among peoples who have never once heard the name of Jesus.</p>
-      <dl class="program-meta">
-        <div><dt>Length</dt><dd>6 months</dd></div>
-        <div><dt>Next intake</dt><dd>September 2026</dd></div>
-      </dl>
-      <a class="program-link" href="#" aria-label="Learn more about the School of Frontier Missions">Learn more <span aria-hidden="true">&rarr;</span></a>
+    <article class="program-card" data-accent="teal" style="--i:2">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-sbs-bible-school-photo-2-2018.webp" alt="SBS students around a table covered in books and laptops" width="600" height="400" loading="lazy">
+      <p class="program-label" lang="th">สอนเป็นภาษาไทย</p>
+      <h3>SBS</h3>
+      <p class="program-tag">School of Biblical Studies</p>
+      <p class="program-copy">Every book of the New Testament, studied inductively, on six to eight hours a day. Taught in Thai, and open to people who have not done a DTS.</p>
+      <a class="program-link" href="sbs.html" aria-label="Learn more about the School of Biblical Studies">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="gold" style="--i:3">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-create-international-seeds-project.webp" alt="Create International team members sharing a meal around a long table" width="600" height="400" loading="lazy">
+      <p class="program-label">For the makers</p>
+      <h3>Create International</h3>
+      <p class="program-tag">Film, animation and still media</p>
+      <p class="program-copy">A YWAM communication ministry in its own right, with four of its teams based here. Training is organised by medium rather than by term.</p>
+      <a class="program-link" href="create-international.html" aria-label="Learn more about Create International">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="teal" style="--i:4">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-belt-ministries-banner.webp" alt="A BELT seminar sitting on the floor of a village hall, teaching cloths pinned behind" width="600" height="400" loading="lazy">
+      <p class="program-label">For the teachers</p>
+      <h3>BELT</h3>
+      <p class="program-tag">Bible Education Leadership Training</p>
+      <p class="program-copy">Equipping leaders who have little access to Biblical training, in their own language. Since 1995, in over 60 countries.</p>
+      <a class="program-link" href="belt.html" aria-label="Learn more about Bible Education Leadership Training">Learn more <span aria-hidden="true">&rarr;</span></a>
     </article>
 
   </div>
@@ -388,46 +424,67 @@
 </section>
 
 <!-- ===================== 7b. MINISTRIES (day) ===================== -->
-<section class="city" data-phase="day" id="ministries">
+<section class="programs" data-phase="day" id="ministries">
   <div class="section-head reveal">
     <p class="eyebrow">Beyond the classroom</p>
-    <h2>Eight ministries, one base.</h2>
-    <p class="lede">Ongoing work students plug into alongside their school, all year round.</p>
+    <h2>Six ministries, one base.</h2>
+    <p class="lede">Ongoing work that runs all year, which students plug into alongside their school.</p>
   </div>
 
-  <div class="ministries-grid reveal" role="list">
-    <figure class="city-card" role="listitem" style="--i:0">
-      <img src="images/ywamchiangmai-ywam-chiangmai-community-center-pim-teaching-kids.webp" alt="Teach Our Kids: staff teaching children" width="1200" height="900" loading="lazy">
-      <figcaption>Teach Our Kids</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:1">
-      <img src="images/ywamchiangmai-ywam-chiangmai-shan-outreach-center-photo-1.webp" alt="Shan Outreach Center" width="1200" height="900" loading="lazy">
-      <figcaption>Shan Outreach Center</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:2">
-      <img src="images/ywamchiangmai-ywam-chiangmai-spiritual-direction-cover-image.webp" alt="Spiritual Direction ministry" width="1200" height="900" loading="lazy">
-      <figcaption>Spiritual Direction</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:3">
-      <img src="images/ywamchiangmai-ywam-chiangmai-home-of-joy-photo-1.webp" alt="Home of Joy" width="1200" height="900" loading="lazy">
-      <figcaption>Home of Joy</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:4">
-      <img src="images/ywamchiangmai-ywam-chiangmai-create-international-workshop.webp" alt="Create International ministry" width="1200" height="900" loading="lazy">
-      <figcaption>Create International</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:5">
-      <img src="images/ywamchiangmai-ywam-chiangmai-community-center-kids-studying-bible.webp" alt="Community Center" width="1200" height="900" loading="lazy">
-      <figcaption>Community Center</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:6">
-      <img src="images/ywamchiangmai-ywam-chiangmai-belt-bible-education-leadership-training.webp" alt="Bible Education Leadership Training" width="1200" height="900" loading="lazy">
-      <figcaption>Bible Education &amp; Leadership Training</figcaption>
-    </figure>
-    <figure class="city-card" role="listitem" style="--i:7">
-      <img src="images/ywamchiangmai-ywam-chiangmai-project-video-asia-production-photo-1.webp" alt="Project Video Asia" width="1200" height="900" loading="lazy">
-      <figcaption>Project Video Asia</figcaption>
-    </figure>
+  <div class="program-grid program-bento reveal">
+
+    <article class="program-card" data-accent="gold" style="--i:0">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-home-of-joy-photo-1.webp" alt="Children playing outside at Home of Joy" width="600" height="400" loading="lazy">
+      <p class="program-label">Since 1994</p>
+      <h3>Home of Joy</h3>
+      <p class="program-tag">A home for children who have none</p>
+      <p class="program-copy">Long term care for children removed from unsafe homes, and a village church that grew up alongside it.</p>
+      <a class="program-link" href="home-of-joy.html" aria-label="Learn more about Home of Joy">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="teal" style="--i:1">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-community-center-pim-teaching-kids.webp" alt="A woman with an alphabet board teaching small children on a porch" width="600" height="400" loading="lazy">
+      <p class="program-label">Santitham</p>
+      <h3>Baan Dem Rak</h3>
+      <p class="program-tag">House Full of Love</p>
+      <p class="program-copy">A community centre for migrant families: English, homework help, sport, digital skills and a Sunday programme.</p>
+      <a class="program-link" href="baan-dem-rak.html" aria-label="Learn more about Baan Dem Rak">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="rose" style="--i:2">
+      <p class="program-label">Grace International School</p>
+      <h3>Teach Our Kids</h3>
+      <p class="program-tag">Teaching posts in Chiang Mai</p>
+      <p class="program-copy">A family cannot stay in the field if there is nowhere for their children to learn. Grace is where many of them go, and it needs teachers.</p>
+      <a class="program-link" href="teach-our-kids.html" aria-label="Learn more about teaching at Grace International School">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="gold" style="--i:3">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-shan-outreach-center-photo-1.webp" alt="Shan Discipleship Training graduates holding certificates under a paper banner" width="600" height="400" loading="lazy">
+      <p class="program-label">Shan, or Tai Yai</p>
+      <h3>Shan Outreach</h3>
+      <p class="program-tag">A community centre in Chiang Mai</p>
+      <p class="program-copy">English classes, a teen Bible study, a Shan church, and a discipleship school rebuilt to fit around a working week.</p>
+      <a class="program-link" href="shan.html" aria-label="Learn more about Shan Outreach">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="teal" style="--i:4">
+      <img class="program-card__image" src="images/ywamchiangmai-ywam-chiangmai-spiritual-direction-cover-image.webp" alt="Two empty rattan chairs facing each other on a shaded terrace" width="600" height="400" loading="lazy">
+      <p class="program-label">Care</p>
+      <h3>Spiritual Direction</h3>
+      <p class="program-tag">One to one, and a silent retreat</p>
+      <p class="program-copy">Somewhere to be honest about doubt and struggle without having to perform, plus three full days of silence once a year.</p>
+      <a class="program-link" href="spiritual-direction.html" aria-label="Learn more about Spiritual Direction">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
+    <article class="program-card" data-accent="rose" style="--i:5">
+      <p class="program-label">Hubbed here</p>
+      <h3>Business as Mission</h3>
+      <p class="program-tag">The business is the mission</p>
+      <p class="program-copy">A real, profitable business run as the ministry itself, which matters in places where a missionary visa is not on offer.</p>
+      <a class="program-link" href="business-as-mission.html" aria-label="Learn more about Business as Mission">Learn more <span aria-hidden="true">&rarr;</span></a>
+    </article>
+
   </div>
 </section>
 
@@ -467,12 +524,13 @@
       </p>
     </div>
     <div>
-      <h3>Programs</h3>
+      <h3>Schools</h3>
       <p class="footer-line">
-        <a href="#programs">DTS</a><br>
-        <a href="#programs">Create</a><br>
+        <a href="dts.html">DTS</a><br>
+        <a href="sbs.html">SBS</a><br>
         <a href="project-video.html">Project Video</a><br>
-        <a href="#programs">SOFM</a>
+        <a href="create-international.html">Create International</a><br>
+        <a href="belt.html">BELT</a>
       </p>
     </div>
   </div>
