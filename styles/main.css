@@ -732,9 +732,13 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 .program-link:hover span { transform: translateX(5px); }
 
 /* ---------- 6. Life (day) ---------- */
+/* Row height is pinned rather than left to the images' intrinsic size: the
+   photos are 1200px wide originals, so an auto row grows with the viewport
+   and they end up dominating the section on a wide screen. */
 .life-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, clamp(200px, 22vw, 320px));
   gap: 1.2rem;
   margin-bottom: 3rem;
 }
@@ -747,6 +751,11 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
 @media (max-width: 760px) {
   .life-photo:nth-child(n) { grid-column: span 6; }
+  /* Two per row becomes four rows, so the pinned pair no longer applies. */
+  .life-grid {
+    grid-template-rows: none;
+    grid-auto-rows: clamp(160px, 34vw, 260px);
+  }
 }
 
 .quotes {
