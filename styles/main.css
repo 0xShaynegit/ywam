@@ -585,19 +585,28 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 }
 
 /* ---------- 4. Mirrors (day) ---------- */
-/* Exactly four cards, so the columns are pinned rather than auto-fit: an
-   auto-fit track count leaves an empty column on wide screens, which reads
-   as a missing fifth card. Full section width, no cap. */
+/* Column count follows the card count instead of auto-fit, which sizes tracks
+   for cards that do not exist and leaves an empty column reading as a missing
+   card. This grid is used with anywhere from two to six cards across the site,
+   so each count gets its own rule and the cards always fill the section. */
 .mirror-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.6rem;
 }
+.mirror-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, 1fr); }
+.mirror-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); }
+.mirror-grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); }
+.mirror-grid:has(> :nth-child(5):last-child),
+.mirror-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(3, 1fr); }
+
 @media (max-width: 1000px) {
-  .mirror-grid { grid-template-columns: repeat(2, 1fr); }
+  .mirror-grid,
+  .mirror-grid:has(> :nth-child(n)) { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
-  .mirror-grid { grid-template-columns: 1fr; }
+  .mirror-grid,
+  .mirror-grid:has(> :nth-child(n)) { grid-template-columns: 1fr; }
 }
 
 .mirror-card {
@@ -1642,3 +1651,36 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
 /* Three or more meta pairs need to wrap inside a card column. */
 .program-meta { flex-wrap: wrap; row-gap: 1rem; }
+
+/* ---------- Subpage: bank transfer details (home-of-joy.html) ----------
+   Published by the ministry itself on the old site, in both languages. The
+   account number is monospaced so digits can be read off without doubt.
+   ------------------------------------------------------------------ */
+.bank-details {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.bank-details > div + div { margin-top: 0.9rem; }
+.bank-details dt {
+  font-size: 0.68rem;
+  font-weight: 640;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.2rem;
+  transition: color 1.2s ease;
+}
+.bank-details dd { font-size: 0.95rem; line-height: 1.5; }
+.bank-number {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-ink);
+  transition: color 1.2s ease;
+}
+
+/* Multi-paragraph mirror cards (the Home of Joy stories) ran together. */
+.mirror-card p + p { margin-top: 0.9rem; }
