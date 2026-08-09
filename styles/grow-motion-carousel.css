@@ -1,0 +1,69 @@
+/* ============================================================
+   Grow Motion Carousel (test variant, standalone)
+   Same 5-slot system and same size numbers as Card Carousel
+   (styles/main.css), but every tier crossing animates over the
+   FULL autoplay interval instead of a short default transition,
+   using the plain continuous formula throughout (no frozen
+   outer slots). Kept entirely separate from Card Carousel —
+   different class names, different files — so this can be
+   tuned/tested without any risk to the component already live
+   on project-video.html.
+
+   Usage: wrap ordered photos/slides in one container.
+     <div class="grow-carousel" data-direction="up|down|left|right">
+       <div class="grow-slide"><img ...></div>
+       <div class="grow-slide"><img ...></div>
+       ...
+     </div>
+   data-direction defaults to "up" if omitted.
+   Set --slide-ratio inline (e.g. style="--slide-ratio: 940/788")
+   to match the real source photo ratio.
+   JS: scripts/grow-motion-carousel.js auto-initialises every
+   .grow-carousel found on the page independently.
+   ============================================================ */
+.grow-carousel {
+  --slide-ratio: 4 / 3;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: min(70vh, 560px);
+  overflow: visible;
+  touch-action: pan-x;
+}
+.grow-carousel[data-direction="left"],
+.grow-carousel[data-direction="right"] {
+  max-width: none;
+  width: min(78vw, 660px);
+  height: min(70vh, 420px);
+  touch-action: pan-y;
+}
+.grow-slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72%;
+  aspect-ratio: var(--slide-ratio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+.grow-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.grow-carousel.dragging .grow-slide { transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .grow-slide { transition: none !important; }
+}
+
+/* ---------- Test page instance ---------- */
+.day-in-life-split .grow-carousel { margin: 0 0 0 100px; }
+@media (max-width: 1100px) {
+  .day-in-life-split .grow-carousel { margin-left: 40px; }
+}
+@media (max-width: 800px) {
+  .day-in-life-split .grow-carousel { margin: 0 auto; }
+}
