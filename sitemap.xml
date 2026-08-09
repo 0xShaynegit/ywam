@@ -66,6 +66,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ywamchiangmai.org/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ywamchiangmai.org/life-in-chiang-mai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ywamchiangmai.org/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ywamchiangmai.org/join-staff.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
