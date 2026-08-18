@@ -602,11 +602,11 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
 @media (max-width: 1000px) {
   .mirror-grid,
-  .mirror-grid:has(> :nth-child(n)) { grid-template-columns: repeat(2, 1fr); }
+  .mirror-grid:has(> :nth-child(n):last-child) { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
   .mirror-grid,
-  .mirror-grid:has(> :nth-child(n)) { grid-template-columns: 1fr; }
+  .mirror-grid:has(> :nth-child(n):last-child) { grid-template-columns: 1fr; }
 }
 
 .mirror-card {
