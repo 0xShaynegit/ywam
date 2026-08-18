@@ -332,7 +332,36 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
   white-space: nowrap;
 }
 .mobile-menu-group { display: flex; flex-direction: column; gap: 0.15rem; }
-.mobile-menu-group a { padding-left: 1.4rem; }
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 640;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: none;
+  border: none;
+  padding: 0.6rem 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.mobile-menu-toggle::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.25s var(--ease-out);
+}
+.mobile-menu-toggle[aria-expanded="true"]::after { transform: translateY(1px) rotate(-135deg); }
+.mobile-menu-panel { display: flex; flex-direction: column; gap: 0.15rem; }
+.mobile-menu-panel[hidden] { display: none; }
+.mobile-menu-panel a { padding-left: 1.4rem; }
 .mobile-menu .nav-apply { align-self: flex-start; margin-top: 0.5rem; }
 .mobile-menu[hidden] { display: none; }
 

@@ -204,6 +204,25 @@
         menu.hidden = true;
       }
     });
+
+    // Standard accordion: Schools / Ministries / About collapse under the
+    // nav, one open at a time, same interaction as the desktop dropdowns.
+    var mobileDrops = menu.querySelectorAll("[data-mobile-drop]");
+    Array.prototype.forEach.call(mobileDrops, function (drop) {
+      var toggle = drop.querySelector(".mobile-menu-toggle");
+      var panel = drop.querySelector(".mobile-menu-panel");
+      if (!toggle || !panel) return;
+      toggle.addEventListener("click", function () {
+        var isOpen = toggle.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(mobileDrops, function (other) {
+          if (other === drop) return;
+          other.querySelector(".mobile-menu-toggle").setAttribute("aria-expanded", "false");
+          other.querySelector(".mobile-menu-panel").hidden = true;
+        });
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        panel.hidden = isOpen;
+      });
+    });
   }
 
   /* ---------- 5. Film still subtitle cycle (Project Video subpage signature) ---------- */
