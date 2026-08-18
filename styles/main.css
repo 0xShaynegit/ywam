@@ -312,23 +312,27 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
   z-index: 99;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem clamp(1.25rem, 4vw, 3rem) 2rem;
+  gap: 0.15rem;
+  padding: 0.7rem clamp(1.25rem, 4vw, 3rem) 2rem;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: var(--bg-raise);
+  transition: top 0.35s ease;
   box-shadow: 0 1px 0 var(--line);
 }
+/* The header shrinks on scroll (.nav.scrolled), so the panel below it must
+   follow or a gap opens showing page content through. */
+.nav.scrolled + .mobile-menu { top: calc(var(--nav-h) * 0.74); }
 .mobile-menu a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 0.98rem;
   font-weight: 500;
-  padding: 0.6rem 0;
+  padding: 0.55rem 0.5rem;
+  border-radius: 7px;
+  white-space: nowrap;
 }
-.mobile-menu-group { display: flex; flex-direction: column; }
-.mobile-menu-group a { padding-left: 0.9rem; font-size: 1.05rem; }
+.mobile-menu-group { display: flex; flex-direction: column; gap: 0.15rem; }
+.mobile-menu-group a { padding-left: 1.4rem; }
 .mobile-menu .nav-apply { align-self: flex-start; margin-top: 0.5rem; }
 .mobile-menu[hidden] { display: none; }
 
