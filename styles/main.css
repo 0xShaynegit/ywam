@@ -308,12 +308,14 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
 
 .mobile-menu {
   position: fixed;
-  top: var(--nav-h); left: 0; right: 0;
+  top: var(--nav-h); left: 0; right: 0; bottom: 0;
   z-index: 99;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem clamp(1.25rem, 4vw, 3rem) 2rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: color-mix(in srgb, var(--bg) 94%, transparent);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
@@ -325,6 +327,8 @@ h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); max-width: 18ch; }
   font-weight: 500;
   padding: 0.6rem 0;
 }
+.mobile-menu-group { display: flex; flex-direction: column; }
+.mobile-menu-group a { padding-left: 0.9rem; font-size: 1.05rem; }
 .mobile-menu .nav-apply { align-self: flex-start; margin-top: 0.5rem; }
 .mobile-menu[hidden] { display: none; }
 
